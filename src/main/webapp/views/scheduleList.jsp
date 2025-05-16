@@ -39,6 +39,7 @@
                     <c:url var="bookingUrl" value="/tickets/booking">
                         <c:param name="scheduleId" value="${schedule.id}" />
                         <c:param name="screenRoomId" value="${schedule.screenRoomId}" />
+                        <c:param name="customerId" value="${customerId}" />
                     </c:url>
                     <a href="${bookingUrl}">Đặt vé</a>
                 </td>

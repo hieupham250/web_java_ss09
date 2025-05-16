@@ -28,7 +28,7 @@ public class LoginController {
         Customer customer = loginService.login(username, password);
         if (customer != null) {
             model.addAttribute("customer", customer);
-            return "redirect:/home";
+            return "redirect:/home?customerId=" + customer.getId();
         } else {
             return "login";
         }

@@ -10,9 +10,8 @@
 <p>Ngôn ngữ: ${movie.language}</p>
 <p>Thời lượng: ${movie.duration} phút</p>
 <p>Mô tả: ${movie.description}</p>
-<a href="${pageContext.request.contextPath}/movies/${movie.id}/schedules">
-    Đặt vé
-</a>
+<a href="${pageContext.request.contextPath}/movies/${movie.id}/schedules?customerId=${customerId}">Đặt vé</a>
+
 <br>
 <a href="${pageContext.request.contextPath}/home">Quay lại danh sách</a>
 </body>

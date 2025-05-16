@@ -19,7 +19,7 @@ public class ScreenRoomRepositoryImp implements ScreenRoomRepository {
         List<ScreenRoom> screenRooms = new ArrayList<ScreenRoom>();
         try {
             conn = ConnectionDB.openConnection();
-            cstmt = conn.prepareCall("{call find_all_screenRoom()}");
+            cstmt = conn.prepareCall("{call find_all_screenroom()}");
             ResultSet rs = cstmt.executeQuery();
             while (rs.next()) {
                 ScreenRoom screenRoom = new ScreenRoom(

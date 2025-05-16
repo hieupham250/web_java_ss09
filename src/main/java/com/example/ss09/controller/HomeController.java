@@ -17,16 +17,20 @@ public class HomeController {
     private MovieService movieService;
 
     @GetMapping("home")
-    public String findAll(Model model) {
+    public String findAll(@RequestParam Long customerId, Model model) {
         List<Movie> movies = movieService.findAll();
         model.addAttribute("movies", movies);
+        model.addAttribute("customerId", customerId);
         return "home";
     }
 
-    @GetMapping("detailMovie/{id}")
-    public String detailMovie(Model model, @PathVariable long id) {
+    @GetMapping("/detailMovie/{id}")
+    public String showDetail(@PathVariable Long id,
+                             @RequestParam("customerId") Long customerId,
+                             Model model) {
         Movie movie = movieService.findById(id);
         model.addAttribute("movie", movie);
+        model.addAttribute("customerId", customerId);
         return "detailMovie";
     }
 }

@@ -10,7 +10,7 @@
         <h1>${movie.title}</h1>
         <p><strong>Đạo diễn:</strong> ${movie.director}</p>
         <p><strong>Thể loại:</strong> ${movie.genre}</p>
-        <a href="detailMovie/${movie.id}">Xem chi tiết</a>
+        <a href="detailMovie/${movie.id}?customerId=${customerId}">Xem chi tiết</a>
     </c:forEach>
 </body>
 </html>

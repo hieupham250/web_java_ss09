@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -28,9 +29,10 @@ public class ScheduleController {
     }
 
     @GetMapping("/movies/{movieId}/schedules")
-    public String showSchedulesByMovie(@PathVariable Long movieId, Model model) {
+    public String showSchedulesByMovie(@PathVariable Long movieId, @RequestParam Long customerId, Model model) {
         List<Schedule> schedules = scheduleService.findAllScheduleByMovie(movieId);
         model.addAttribute("schedules", schedules);
+        model.addAttribute("customerId", customerId);
         model.addAttribute("movieId", movieId);
         return "scheduleList";
     }
